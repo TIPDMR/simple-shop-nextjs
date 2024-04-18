@@ -1,10 +1,10 @@
 import React, { ReactNode } from 'react';
 
 import { IProduct } from '@entities/Products';
-import Image from 'next/image';
 
 import styles from './entities.module.scss';
 import { Heading } from '@ui/Heading';
+import Image from 'next/image';
 
 interface IProductCardProps {
   product: IProduct;
