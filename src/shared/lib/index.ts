@@ -1,1 +1,1 @@
-export { cleanHtml, formatPhoneNumber } from './lib';
+export { cleanHtml, formatPhoneNumber } from './utils';

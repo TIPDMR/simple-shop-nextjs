@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { SubmitHandler, useForm } from 'react-hook-form';
-import { formatPhoneNumber } from '@shared/lib';
+import { formatPhoneNumber } from '@shared/lib/utils';
 import type { IBasketProductsMock } from '@entities/Basket';
 import BackendApi from '@shared/api/BackendApi';
 
