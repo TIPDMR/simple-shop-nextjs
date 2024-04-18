@@ -3,6 +3,7 @@
 .basketProduct {
   @include index.mix-flex-container();
   column-gap: 15px;
+  align-items: center;
 
   &__name {
     overflow: hidden;

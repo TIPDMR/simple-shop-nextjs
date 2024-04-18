@@ -1,1 +1,1 @@
-export { OrderButton, AddProductBasketButton } from './buttons';
+export { OrderButton, AddProductToBasketButton } from './buttons';

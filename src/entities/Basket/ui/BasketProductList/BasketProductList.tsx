@@ -1,21 +1,15 @@
-import React from 'react';
-import { BasketProduct } from '../BasketProduct';
+import React, { ReactNode } from 'react';
 
 import styles from './entities.module.scss';
-import type { IBasketProduct } from '@entities/Basket';
 
-const MemoizedBasketProductList = ({ items }: { items: IBasketProduct[] }) => {
+interface IBasketProductListProps {
+  children: ReactNode;
+}
+
+const MemoizedBasketProductList = ({ children }: IBasketProductListProps) => {
   return (
     <div className={styles.basketProductList}>
-      {items.map((item: IBasketProduct) => (
-        <BasketProduct
-          id={item.id}
-          key={item.id}
-          quantity={item.quantity}
-          name={item.name}
-          price={item.price}
-        />
-      ))}
+      {children}
     </div>
   );
 };

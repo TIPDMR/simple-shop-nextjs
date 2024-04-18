@@ -9,7 +9,7 @@ interface IAppButtonProps {
   type?: 'button' | 'reset' | 'submit';
   onClick?: () => void;
   classNameButton?: string;
-  size?: 'xs' | 's';
+  size?: 'auto' | 'xs' | 's';
   borderRadius?: 'xs';
   bgColor?: 'dark' | 'light' | 'transparent';
   textColor?: 'dark' | 'light';
@@ -29,17 +29,18 @@ interface IAppButtonProps {
  * @param textColor - Цвет кнопки.
  * @param disabled - Активность кнопки.
  */
-const Button: React.FC<IAppButtonProps> = ({
-  children,
-  type = 'button',
-  onClick,
-  size = 'xs',
-  classNameButton,
-  borderRadius = 'xs',
-  bgColor = 'dark',
-  textColor = 'light',
-  disabled = false,
-}) => {
+const Button: React.FC<IAppButtonProps> = (
+  {
+    children,
+    type = 'button',
+    onClick,
+    size = 'xs',
+    classNameButton,
+    borderRadius = 'xs',
+    bgColor = 'dark',
+    textColor = 'light',
+    disabled = false,
+  }) => {
   /**
    * Общий класс для стилизации кнопок.
    */
@@ -50,6 +51,7 @@ const Button: React.FC<IAppButtonProps> = ({
    * Размеры кнопок.
    */
   const sizeList = {
+    auto: styles.button_size_auto,
     xs: styles.button_size_xs,
     s: styles.button_size_s,
   };
@@ -92,7 +94,7 @@ const Button: React.FC<IAppButtonProps> = ({
         bgColorList[bgColor],
         textColorList[textColor],
         disabledClass,
-        classNameButton
+        classNameButton,
       )}
       type={type}
       onClick={handlerClick}

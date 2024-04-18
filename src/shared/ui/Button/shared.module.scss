@@ -5,11 +5,17 @@
   @include index.mix-typography-regular(index.$var-font-size-m);
   @include index.mix-flex-container(row, center, center);
   flex-shrink: 0;
+
   &_disabled {
     cursor: default;
   }
 
   &_size {
+    &_auto {
+      width: auto;
+      height: auto;
+    }
+
     &_xs {
       width: 268px;
       height: 68px;

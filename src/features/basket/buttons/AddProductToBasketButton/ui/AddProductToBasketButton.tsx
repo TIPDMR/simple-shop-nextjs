@@ -9,18 +9,17 @@ interface IAddProductBasketProps {
   product: IProduct;
 }
 
-const AddProductBasketButton = ({ product }: IAddProductBasketProps) => {
+const AddProductToBasketButton = ({ product }: IAddProductBasketProps) => {
   const { onAddProductToBasket } = useBasket();
 
   return (
     <Button
       onClick={() => onAddProductToBasket(product)}
-      classNameButton={styles.addProductBasketButton}
+      classNameButton={styles.addProductBasketToButton}
     >
-      {' '}
-      Купить{' '}
+      Купить
     </Button>
   );
 };
 
-export { AddProductBasketButton };
+export { AddProductToBasketButton };

@@ -13,10 +13,15 @@ export const useBasketStore = create<IBasketStore>()(
         const currentProducts = get().products;
         set({ products: [...currentProducts, product] });
       },
+      removeProductFromBasket: (product: IBasketProduct) => {
+        const currentProducts = get().products;
+        const filterProduct = currentProducts.filter((getProduct: IBasketProduct) => getProduct.id !== product.id);
+        set({ products: [...filterProduct] });
+      },
     }),
     {
       name: 'basket-storage',
       storage: createJSONStorage(() => localStorage),
-    }
-  )
+    },
+  ),
 );

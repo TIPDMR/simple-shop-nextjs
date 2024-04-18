@@ -1,2 +1,3 @@
 export { OrderButton } from './OrderButton';
-export { AddProductBasketButton } from './AddProductBasketButton';
+export { AddProductToBasketButton } from './AddProductToBasketButton';
+export { RemoveProductFromBasket } from './RemoveProductFromBasket';

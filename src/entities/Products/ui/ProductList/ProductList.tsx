@@ -2,7 +2,7 @@ import React from 'react';
 
 import styles from './entities.module.scss';
 import { IProduct, ProductCard } from '@entities/Products';
-import { AddProductBasketButton } from '@features/basket';
+import { AddProductToBasketButton } from '@features/basket';
 import { IBasketProduct } from '@entities/Basket';
 
 interface IProductListProps {
@@ -24,7 +24,7 @@ const ProductList = ({ products, productsInBasket }: IProductListProps) => {
       {products?.map((product: IProduct, index) => (
         <ProductCard key={index} product={product}>
           {!inBasket(product) ? (
-            <AddProductBasketButton product={product} />
+            <AddProductToBasketButton product={product} />
           ) : (
             <div></div>
           )}

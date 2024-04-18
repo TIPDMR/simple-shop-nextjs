@@ -19,4 +19,5 @@ export interface IBasketStore {
   loading: boolean;
   error: string | null;
   addProductToBasket: (products: IBasketProduct) => void;
+  removeProductFromBasket: (products: IBasketProduct) => void;
 }
