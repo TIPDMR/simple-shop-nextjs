@@ -1,0 +1,55 @@
+@use '../../../app/styles/index';
+
+.button {
+  @include index.mix-reset-reset-button;
+  @include index.mix-typography-regular(index.$var-font-size-m);
+  @include index.mix-flex-container(row, center, center);
+  flex-shrink: 0;
+  &_disabled {
+    cursor: default;
+  }
+
+  &_size {
+    &_xs {
+      width: 268px;
+      height: 68px;
+    }
+
+    &_s {
+      width: 281px;
+      height: 68px;
+    }
+  }
+
+  &_borderRadius {
+    border-radius: 15px;
+  }
+
+  &_bgColorLight {
+    background: index.$var-colorGray;
+  }
+
+  &_bgColorDark {
+    background: index.$var-colorGrayDark;
+
+    &:hover {
+      opacity: 0.9;
+      transition: all 0.2s ease;
+    }
+  }
+
+  &_bgColorTransparent {
+  }
+
+  &_textColorLight {
+    color: index.$var-fontColorLight;
+  }
+
+  &_textColorDark {
+    color: index.$var-fontColorDark;
+  }
+
+  @include index.mix-breakpoints-tablet-small {
+    width: 100%;
+  }
+}

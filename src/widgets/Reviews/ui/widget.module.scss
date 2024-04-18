@@ -1,0 +1,13 @@
+@use '../../../app/styles/index';
+
+.reviews {
+  max-width: 970px;
+  width: 100%;
+  margin: 105px auto 0;
+  @include index.mix-breakpoints-tablet-small {
+    margin-top: 65px;
+  }
+  @include index.mix-breakpoints-mobile {
+    margin-top: 35px;
+  }
+}

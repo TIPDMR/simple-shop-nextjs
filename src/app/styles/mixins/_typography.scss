@@ -1,0 +1,73 @@
+@use '../vars';
+@use './breakpoints';
+
+// Общие стили текста
+@mixin text-styles(
+  $font-size: vars.$font-size-s,
+  $line-height: normal,
+  $color: vars.$fontColorDark,
+  $font-weight: vars.$fontRegularWeight,
+  $font-style: null
+) {
+  font-size: $font-size;
+  color: $color;
+  font-weight: $font-weight;
+  line-height: $line-height;
+
+  @if $font-style {
+    font-style: $font-style;
+  }
+}
+
+@mixin regular(
+  $font-size: vars.$font-size-s,
+  $line-height: vars.$line-height-s,
+  $color: vars.$fontColorDark
+) {
+  @include text-styles($font-size, $line-height, $color);
+  @include breakpoints.tablet-small {
+    font-size: 34px;
+  }
+}
+
+@mixin heading-h1(
+  $font-size: vars.$font-size-xl,
+  $line-height: normal,
+  $color: vars.$fontColorLight
+) {
+  @include text-styles($font-size, $line-height, $color);
+  @include breakpoints.tablet {
+    font-size: 80px;
+  }
+  @include breakpoints.tablet-small {
+    font-size: 60px;
+  }
+  @include breakpoints.mobile {
+    font-size: 40px;
+  }
+}
+
+@mixin heading-h2(
+  $font-size: vars.$font-size-m,
+  $line-height: normal,
+  $color: vars.$fontColorLight
+) {
+  @include text-styles($font-size, $line-height, $color);
+}
+
+// Максимальное количество строк для отображения
+@mixin text-number-rows-show($count: 2) {
+  display: -webkit-box;
+  -webkit-line-clamp: $count;
+  -webkit-box-orient: vertical;
+  white-space: normal;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+// Многоточие в конце строки
+@mixin text-overflow-ellipsis {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}

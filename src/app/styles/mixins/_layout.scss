@@ -1,0 +1,20 @@
+@use '../vars';
+@use './breakpoints';
+
+@mixin page-container {
+  max-width: vars.$maxWidth;
+  //min-width: vars.$minWidth;
+  box-sizing: border-box;
+  padding: 55px 20px 0;
+  margin: 0 auto;
+
+  @include breakpoints.tablet {
+    padding: 45px 18px 0;
+  }
+  @include breakpoints.tablet-small {
+    padding: 40px 16px 0;
+  }
+  @include breakpoints.mobile {
+    padding: 35px 14px 0;
+  }
+}

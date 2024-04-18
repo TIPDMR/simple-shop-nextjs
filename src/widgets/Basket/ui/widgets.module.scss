@@ -1,0 +1,21 @@
+@use '../../../app/styles/index.scss';
+
+.basket {
+  @include index.mix-flex-container(column);
+  row-gap: 20px;
+  margin: 243px auto 0;
+  background-color: index.$var-colorGrayLight;
+  border-radius: 15px;
+  max-width: 708px;
+  padding: 30px 15px;
+  box-sizing: border-box;
+  @include index.mix-breakpoints-tablet {
+    margin-top: 105px;
+  }
+  @include index.mix-breakpoints-tablet-small {
+    margin-top: 145px;
+  }
+  @include index.mix-breakpoints-mobile {
+    margin-top: 35px;
+  }
+}

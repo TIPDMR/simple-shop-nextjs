@@ -1,0 +1,14 @@
+@use '../../../app/styles/index';
+
+.header {
+  @include index.mix-typography-regular();
+  @include index.mix-flex-container(row, center, center);
+  background-color: index.$var-colorGray;
+  border-radius: 15px;
+  min-height: 132px;
+  text-align: center;
+
+  @include index.mix-breakpoints-mobile {
+    font-size: 19px;
+  }
+}

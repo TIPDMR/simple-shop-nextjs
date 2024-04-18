@@ -1,0 +1,19 @@
+@use '../../../app/styles/index';
+
+.inputTel {
+  @include index.mix-reset-reset-input;
+  @include index.mix-typography-regular(index.$var-font-size-m);
+  background-color: index.$var-colorGrayDark;
+  color: index.$var-fontColorLight;
+  border-radius: 15px;
+  padding: 12px 16px;
+  box-sizing: border-box;
+  height: 68px;
+  width: 100%;
+
+  &:focus {
+    transition: opacity 0.2s ease;
+    opacity: 0.9;
+    box-sizing: border-box;
+  }
+}

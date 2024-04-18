@@ -1,0 +1,33 @@
+@use '../../../../app/styles/index';
+
+.basketProduct {
+  @include index.mix-flex-container();
+  column-gap: 15px;
+
+  &__name {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    width: 100%;
+    @include index.mix-breakpoints-tablet-small {
+      width: 40%;
+    }
+  }
+
+  &__price {
+    max-width: 10%;
+    width: 100%;
+    justify-content: end;
+    @include index.mix-breakpoints-tablet-small {
+      width: 25%;
+    }
+  }
+
+  &__count {
+    width: 5%;
+    justify-content: end;
+    @include index.mix-breakpoints-tablet-small {
+      width: 25%;
+    }
+  }
+}

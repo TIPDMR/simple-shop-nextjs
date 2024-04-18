@@ -1,0 +1,33 @@
+.spinner {
+  height: 2rem; /* Высота h-8 в Tailwind */
+  width: 2rem; /* Ширина w-8 в Tailwind */
+  border-width: 0.5rem; /* Ширина границы border-4 в Tailwind */
+  border-style: solid; /* Тип границы border-solid в Tailwind */
+  border-color: white; /* Цвет границы border-current в Tailwind */
+  border-radius: 9999px; /* Закругление краев rounded-full в Tailwind */
+  border-right-color: transparent; /* Прозрачность границы border-r-transparent в Tailwind */
+  margin-top: -0.125em; /* Выравнивание по вертикали align-[-0.125em] в Tailwind */
+  animation: spin 1.5s linear infinite; /* Анимация animate-spin в Tailwind */
+  & span {
+    position: absolute; /* Положение абсолютное absolute в Tailwind */
+    margin: -1px; /* Отступ от краев -m-px в Tailwind */
+    height: 1px; /* Высота h-px в Tailwind */
+    width: 1px; /* Ширина w-px в Tailwind */
+    overflow: hidden; /* Переполнение overflow-hidden в Tailwind */
+    white-space: nowrap; /* Пробелы white-space-nowrap в Tailwind */
+    border: 0; /* Граница border-0 в Tailwind */
+    padding: 0; /* Внутренний отступ p-0 в Tailwind */
+    clip: rect(
+      0,
+      0,
+      0,
+      0
+    ); /* Обрезка содержимого clip:rect(0,0,0,0) в Tailwind */
+  }
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}

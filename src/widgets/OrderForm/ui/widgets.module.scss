@@ -1,0 +1,11 @@
+@use '../../../app/styles/index.scss';
+
+.orderForm {
+  @include index.mix-flex-container();
+  column-gap: 20px;
+  row-gap: 30px;
+
+  @include index.mix-breakpoints-tablet-small {
+    flex-direction: column;
+  }
+}

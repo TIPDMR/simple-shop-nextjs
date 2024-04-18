@@ -1,0 +1,23 @@
+@use '../../../../app/styles/index';
+
+.review-card {
+  background-color: index.$var-colorGrayLight;
+  padding: 24px 27px;
+  box-sizing: border-box;
+  border-radius: 15px;
+  //width: 100%;
+  height: 100%;
+  //max-width: 468px;
+  @include index.mix-breakpoints-tablet {
+    //max-width: 100%;
+  }
+
+  & h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @include index.mix-reset-default;
+  }
+}

@@ -1,0 +1,35 @@
+@use '../../../../app/styles/index';
+
+.swiper-slide {
+  flex-shrink: 0;
+  width: auto;
+  //max-width: 468px;
+  height: auto;
+  position: relative;
+  transition-property: transform;
+  display: block;
+}
+
+.swiper-slide-active {
+  //max-width: 100%;
+}
+
+.swiper-wrapper {
+  display: flex;
+}
+
+.swiper-reviews_centred {
+  justify-content: center;
+}
+
+.swiper-pagination-bullets {
+  top: 20px;
+}
+
+.swiper-pagination-bullet-active {
+  background-color: index.$var-colorGrayLight;
+}
+
+.swiper-pagination-bullet {
+  background: index.$var-colorGrayDark;
+}

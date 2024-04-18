@@ -1,0 +1,6 @@
+@use '../../../app/styles/index';
+
+.fieldset {
+  @include index.mix-reset-reset-input;
+  position: relative;
+}

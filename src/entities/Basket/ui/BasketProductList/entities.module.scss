@@ -1,0 +1,7 @@
+@use '../../../../app/styles/index';
+
+.basketProductList {
+  @include index.mix-flex-container(column);
+  row-gap: 5px;
+  column-gap: 15px;
+}

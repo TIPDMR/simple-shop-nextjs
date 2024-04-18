@@ -1,0 +1,32 @@
+// Ширина экрана
+$maxWidth: 1482px;
+$minWidth: 360px;
+// Цвета
+$colorBlack: #000;
+$colorGrayDark: #222;
+$colorGray: #777777;
+$colorGrayLight: #d9d9d9; //фон карточек
+$colorGraySuperLight: #f0f0f0; //Цвет шрифта на темном
+
+// Цвета шрифтов
+$fontColorDark: $colorBlack;
+$fontColorLight: $colorGraySuperLight;
+
+$bgColor: $colorGrayDark;
+
+// Размеры шрифтов
+$font-size-s: 24px;
+$font-size-m: 36px;
+$font-size-l: 40px;
+$font-size-xl: 96px;
+
+// Интервалы строк
+$line-height-s: 29px;
+$line-height-m: 44px;
+$line-height-xl: 116px;
+
+// Стили шрифтов
+$fontStyleNormal: normal;
+
+// Веса шрифтов
+$fontRegularWeight: 400;

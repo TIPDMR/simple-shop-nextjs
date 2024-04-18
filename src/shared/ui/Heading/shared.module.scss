@@ -1,0 +1,21 @@
+@use '../../../app/styles/index';
+
+.heading {
+  @include index.mix-reset-default;
+
+  &_h1 {
+    @include index.mix-typography-heading-h1();
+  }
+
+  &_h2 {
+    @include index.mix-typography-heading-h2(index.$var-font-size-m);
+  }
+
+  &_textColorLight {
+    color: index.$var-fontColorLight;
+  }
+
+  &_textColorDark {
+    color: index.$var-fontColorDark;
+  }
+}

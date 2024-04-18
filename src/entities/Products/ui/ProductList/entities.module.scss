@@ -1,0 +1,6 @@
+@use '../../../../app/styles/index';
+
+.productList {
+  @include index.mix-flex-container(row, center, null, null, wrap);
+  gap: 30px;
+}

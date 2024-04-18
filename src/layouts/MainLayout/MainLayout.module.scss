@@ -1,0 +1,5 @@
+@use '../../app/styles/index';
+
+.main-layout {
+  @include index.mix-layout-page-container;
+}
