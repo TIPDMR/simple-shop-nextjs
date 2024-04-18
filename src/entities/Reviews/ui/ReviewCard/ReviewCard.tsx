@@ -1,5 +1,5 @@
 import React from 'react';
-import { cleanHtml } from '@shared/lib';
+import { cleanHtml } from '@shared/lib/utils';
 
 import styles from './entities.module.scss';
 
