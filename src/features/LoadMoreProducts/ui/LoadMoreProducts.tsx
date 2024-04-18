@@ -2,7 +2,8 @@
 import React from 'react';
 import { Spinner } from '@ui/Spinner';
 import styles from './features.module.scss';
-import { useLoadMoreProducts } from '../model';
+import { useLoadMoreProducts } from '@shared/lib/hooks/useLoadMoreProducts';
+
 
 const LoadMoreProducts = () => {
   const { isLoading, ref } = useLoadMoreProducts();

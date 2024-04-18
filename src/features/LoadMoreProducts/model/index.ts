@@ -1,1 +1,0 @@
-export { useLoadMoreProducts } from './useLoadMoreProducts';

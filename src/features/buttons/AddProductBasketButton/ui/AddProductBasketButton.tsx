@@ -1,8 +1,9 @@
 import React from 'react';
 import { IProduct } from '@entities/Products';
 import { Button } from '@ui/Button';
+import { useBasket } from '@shared/lib/hooks';
+
 import styles from './features.module.scss';
-import { useBasket } from '@entities/Basket/model/hooks';
 
 interface IAddProductBasketProps {
   product: IProduct;

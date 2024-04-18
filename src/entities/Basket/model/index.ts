@@ -4,4 +4,4 @@ export type {
   IBasketStore,
   IBasketProductsMock,
 } from './type';
-export { useBasket } from './hooks';
+export { useBasket } from '@shared/lib/hooks/useBasket';

@@ -3,7 +3,7 @@ import { Button } from '@ui/Button';
 import { Form } from '@ui/Form';
 import { InputTel } from '@ui/InputTel';
 import { Fieldset } from '@ui/Fieldset';
-import { useOrderForm } from '../model';
+import { useOrderForm } from '@shared/lib/hooks';
 
 import styles from './widgets.module.scss';
 
