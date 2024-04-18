@@ -5,11 +5,9 @@
   gap: 30px;
   max-width: 970px;
   width: 100%;
-  margin: 50px auto 0;
+  margin: 105px auto 0;
   @include index.mix-breakpoints-tablet-small {
     margin-top: 35px;
   }
-  @include index.mix-breakpoints-mobile {
-    margin-top: 20px;
-  }
+
 }

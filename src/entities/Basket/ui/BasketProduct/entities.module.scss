@@ -1,34 +1,38 @@
 @use '../../../../app/styles/index';
 
 .basketProduct {
-  @include index.mix-flex-container();
+  @include index.mix-flex-container(null, space-around, center);
   column-gap: 15px;
-  align-items: center;
+  @include index.mix-breakpoints-tablet-small {
+    column-gap: 5px;
+  }
 
   &__name {
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
     width: 100%;
-    @include index.mix-breakpoints-tablet-small {
-      width: 40%;
+    @include index.mix-breakpoints-mobile {
+      width: 60%;
     }
   }
 
   &__price {
+    @include index.mix-flex-container(null, end);
     max-width: 10%;
     width: 100%;
     justify-content: end;
     @include index.mix-breakpoints-tablet-small {
-      width: 25%;
+      min-width: 15%;
     }
   }
 
   &__count {
+    @include index.mix-flex-container(null, end);
     width: 5%;
-    justify-content: end;
+
     @include index.mix-breakpoints-tablet-small {
-      width: 25%;
+      width: 10%;
     }
   }
 }

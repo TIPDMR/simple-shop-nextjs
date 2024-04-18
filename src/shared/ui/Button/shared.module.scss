@@ -19,11 +19,17 @@
     &_xs {
       width: 268px;
       height: 68px;
+      @include index.mix-breakpoints-tablet-small {
+        width: 100%;
+      }
     }
 
     &_s {
       width: 281px;
       height: 68px;
+      @include index.mix-breakpoints-tablet-small {
+        width: 100%;
+      }
     }
   }
 
@@ -55,7 +61,5 @@
     color: index.$var-fontColorDark;
   }
 
-  @include index.mix-breakpoints-tablet-small {
-    width: 100%;
-  }
+
 }
