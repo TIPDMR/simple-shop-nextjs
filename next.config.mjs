@@ -3,7 +3,7 @@ import path from 'path';
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: false,
-  distDir: 'build',
+  // distDir: 'build',
   // pageExtensions: ['page.tsx', 'page.ts', 'page.jsx', 'page.js'],
   sassOptions: {
     includePaths: [path.join('./src/app/styles')],
