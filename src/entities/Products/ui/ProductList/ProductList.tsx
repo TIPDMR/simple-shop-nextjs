@@ -15,7 +15,7 @@ const ProductList = ({ products, productsInBasket }: IProductListProps) => {
   const inBasket = (product: IProduct) => {
     return (
       productsInBasket.some(
-        (productInBasket) => productInBasket.id === product.id
+        (productInBasket) => productInBasket.id === product.id,
       ) || false
     );
   };
@@ -26,7 +26,7 @@ const ProductList = ({ products, productsInBasket }: IProductListProps) => {
           {!inBasket(product) ? (
             <AddProductToBasketButton product={product} />
           ) : (
-            <div></div>
+            <></>
           )}
         </ProductCard>
       ))}

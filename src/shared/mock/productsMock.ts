@@ -129,14 +129,14 @@ export const productsMock: IProduct[] = [
   },
   {
     id: 19,
-    image_url: '/products/51eg55uWmdL.webp',
+    image_url: '/products/71HblAHs5xL.webp',
     title: 'Opna Women\'s Short Sleeve Moisture',
     description: '100% Polyester, Machine wash, 100% cationic polyester interlock, Machine Wash & Pre Shrunk for a Great Fit, Lightweight, roomy and highly breathable with moisture wicking fabric which helps to keep moisture away, Soft Lightweight Fabric with comfortable V-neck collar and a slimmer fit, delivers a sleek, more feminine silhouette and Added Comfort',
     price: '7.95',
   },
   {
     id: 20,
-    image_url: '/products/61pHAEJ4NML.webp',
+    image_url: '/products/71z3kpMAYsL.webp',
     title: 'DANVOUY Womens T Shirt Casual Cotton Short',
     description: '95%Cotton,5%Spandex, Features: Casual, Short Sleeve, Letter Print,V-Neck,Fashion Tees, The fabric is soft and has some stretch., Occasion: Casual/Office/Beach/School/Home/Street. Season: Spring,Summer,Autumn,Winter.',
     price: '12.99',

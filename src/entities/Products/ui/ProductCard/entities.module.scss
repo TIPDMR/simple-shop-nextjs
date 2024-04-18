@@ -14,9 +14,8 @@
   overflow: auto;
   border-radius: 15px;
   opacity: 0;
-  transition:
-    opacity 0.3s ease,
-    transform 0.3s ease; // добавляем анимацию для transform
+  transition: opacity 0.3s ease,
+  transform 0.3s ease; // добавляем анимацию для transform
   transform-origin: center; // задаем точку привязки для transform
   transform: scale(0); // начальное значение масштаба
   display: flex;
@@ -25,7 +24,7 @@
 }
 
 .productCard {
-  @include index.mix-flex-container(column);
+  @include index.mix-flex-container(column, space-between);
   row-gap: 10px;
   max-width: 303px;
   background: index.$var-colorGrayLight;
@@ -47,7 +46,7 @@
   &__price {
     @include index.mix-typography-regular();
     align-self: center;
-    margin-top: 20px;
+    margin: 20px 0;
   }
 
   &__title {
