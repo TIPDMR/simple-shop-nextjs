@@ -2,7 +2,7 @@ import React from 'react';
 
 import styles from './entities.module.scss';
 import { IProduct, ProductCard } from '@entities/Products';
-import { AddProductBasketButton } from '@features/buttons/AddProductBasketButton';
+import { AddProductBasketButton } from '@features/basket';
 import { IBasketProduct } from '@entities/Basket';
 
 interface IProductListProps {

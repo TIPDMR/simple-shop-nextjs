@@ -2,7 +2,7 @@
 import React, { useEffect } from 'react';
 import { ProductList } from '@entities/Products';
 
-import { LoadMoreProducts } from '@features/LoadMoreProducts';
+import { LoadMoreProducts } from 'src/features/products/LoadMoreProducts';
 import { useBasketStore, useProductsStore } from '@app/store';
 
 import styles from './widgets.module.scss';
