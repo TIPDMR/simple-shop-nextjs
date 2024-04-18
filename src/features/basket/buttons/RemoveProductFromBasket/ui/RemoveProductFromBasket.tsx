@@ -1,13 +1,19 @@
 import React from 'react';
 import { Button } from '@ui/Button';
-import styles from './features.module.scss';
 import { useBasket } from '@shared/lib/hooks';
 import { IBasketProduct } from '@entities/Basket';
+
+import styles from './features.module.scss';
 
 interface IRemoveProductToBasketProps {
   product: IBasketProduct;
 }
 
+/**
+ * Кнопка удаление товара из корзины
+ * @param product - Товар который удаляется из корзины
+ * @constructor
+ */
 const RemoveProductFromBasket = ({ product }: IRemoveProductToBasketProps) => {
   const { onRemoveProductToBasket } = useBasket();
   return (

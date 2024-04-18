@@ -6,6 +6,12 @@ interface IBasketProductListProps {
   children: ReactNode;
 }
 
+/**
+ * Список товаров в корзине
+ *
+ * @param children
+ * @constructor
+ */
 const MemoizedBasketProductList = ({ children }: IBasketProductListProps) => {
   return (
     <div className={styles.basketProductList}>

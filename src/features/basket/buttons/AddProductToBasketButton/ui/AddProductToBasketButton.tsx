@@ -9,6 +9,11 @@ interface IAddProductBasketProps {
   product: IProduct;
 }
 
+/**
+ * Кнопка добавление товара в корзину
+ * @param product - Товар который добавляется в корзину
+ * @constructor
+ */
 const AddProductToBasketButton = ({ product }: IAddProductBasketProps) => {
   const { onAddProductToBasket } = useBasket();
 

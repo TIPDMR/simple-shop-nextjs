@@ -2,23 +2,28 @@
 import React from 'react';
 import { Heading } from '@ui/Heading';
 import { OrderForm } from '@widgets/OrderForm';
-import { BasketProductList, type IBasketProduct, useBasket } from '@entities/Basket';
+import { BasketProduct, BasketProductList, type IBasketProduct, useBasket } from '@entities/Basket';
+
 
 import styles from './widgets.module.scss';
-import { BasketProduct } from '@entities/Basket/ui/BasketProduct';
 import { RemoveProductFromBasket } from '@features/basket/buttons';
 
+/**
+ * Корзина
+ * @constructor
+ */
 const Basket = () => {
   const { isProductBasketList } = useBasket();
+  if (!isProductBasketList.length) return null;
   return (
     <div className={styles.basket}>
-      <Heading tag={'h2'}> Добавленные товары</Heading>
+      <Heading tag={'h2'}>Добавленные товары</Heading>
       <BasketProductList>
-        {isProductBasketList.map((item: IBasketProduct) => (
+        {isProductBasketList.map((basketProduct: IBasketProduct) => (
           <BasketProduct
-            key={item.id}
-            product={item}
-            deleteButton={(<RemoveProductFromBasket product={item} />)}
+            key={basketProduct.id}
+            product={basketProduct}
+            removeButton={<RemoveProductFromBasket product={basketProduct} />}
           />
         ))}
       </BasketProductList>
