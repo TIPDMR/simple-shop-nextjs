@@ -11,7 +11,7 @@
 
 ## Ссылки:
 
-### Демо: [=> Link Site <=](#)
+### Демо: [=> Link Site <=](https://simple-shop-nextjs-alpha.vercel.app/)
 
 ## Frontend:
 
@@ -70,4 +70,4 @@ npm run dev
 
 ## Фото чата
 
-![img](./screen/chat-screen.jpg)
+![img](./screen/screencapture.png)
