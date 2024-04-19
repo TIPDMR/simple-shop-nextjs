@@ -30,10 +30,21 @@ export const useBasket = () => {
   const handleRemoveProduct = (product: IBasketProduct) => {
     removeProductToBasket(product);
   };
-
+  /**
+   * Проверка находится ли товар в корзине
+   * @param product
+   */
+  const checkProductInBasket = (product: IProduct) => {
+    return (
+      productBasket.some(
+        (productInBasket) => productInBasket.id === product.id,
+      ) || false
+    );
+  };
   return {
     onAddProductToBasket: handleAddProduct,
     onRemoveProductToBasket: handleRemoveProduct,
     isProductBasketList: productBasket,
+    onCheckProductInBasket: checkProductInBasket,
   };
 };
