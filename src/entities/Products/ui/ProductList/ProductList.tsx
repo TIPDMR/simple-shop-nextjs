@@ -1,32 +1,32 @@
 import React from 'react';
 
-import styles from './entities.module.scss';
 import { IProduct, ProductCard } from '@entities/Products';
-import { IBasketProduct } from '@entities/Basket';
-import { AddToBasketButton } from '@features/products';
+import { AddToBasketButton, BasketQuantityButton } from '@features/products';
+
+import styles from './entities.module.scss';
 
 interface IProductListProps {
   children?: React.ReactNode;
   products: IProduct[];
-  productsInBasket: IBasketProduct[];
+  onCheckProductInBasket: (product: IProduct) => boolean;
 }
 
-const ProductList = ({ products, productsInBasket }: IProductListProps) => {
-  const inBasket = (product: IProduct) => {
-    return (
-      productsInBasket.some(
-        (productInBasket) => productInBasket.id === product.id,
-      ) || false
-    );
-  };
+/**
+ * Вывод товара на страницу
+ * @param products - список товаров
+ * @param onCheckProductInBasket - функция для проверки находится ли товар в корзине
+ * @constructor
+ */
+const ProductList = ({ products, onCheckProductInBasket }: IProductListProps) => {
+
   return (
     <div className={styles.productList}>
       {products?.map((product: IProduct, index) => (
         <ProductCard key={index} product={product}>
-          {!inBasket(product) ? (
+          {!onCheckProductInBasket(product) ? (
             <AddToBasketButton product={product} />
           ) : (
-            <></>
+            <BasketQuantityButton></BasketQuantityButton>
           )}
         </ProductCard>
       ))}

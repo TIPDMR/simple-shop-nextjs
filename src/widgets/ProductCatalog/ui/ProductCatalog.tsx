@@ -1,25 +1,27 @@
 'use client';
 import React, { useEffect } from 'react';
+import BackendApi from '@shared/api/BackendApi';
+import { useBasket, useProduct } from '@shared/lib/hooks';
 import { ProductList } from '@entities/Products';
-
-import { LoadMoreProducts } from 'src/features/products/LoadMoreProducts';
-import { useBasketStore, useProductsStore } from '@app/store';
+import { LoadMoreProducts } from '@features/products/LoadMoreProducts';
 
 import styles from './widgets.module.scss';
-import BackendApi from '@shared/api/BackendApi';
 
+
+/**
+ * Каталог товаров
+ * @constructor
+ */
 const ProductCatalog = () => {
-  const addProducts = useProductsStore((state) => state.addProducts);
-  const products = useProductsStore((state) => state.products);
-
-  const productsInBasket = useBasketStore((state) => state.products);
+  const { onAddProducts, isProductsList } = useProduct();
+  const { onCheckProductInBasket } = useBasket();
 
   useEffect(() => {
-    BackendApi.getProducts({ page: 1, pageSize: 6 })
+    BackendApi.getProducts({ page: 1, pageSize: Number(process.env.PAGE_SIZE) || 6 })
       .then((res) => {
         return res.data;
       }).then((data) => {
-      addProducts(data.products);
+      onAddProducts(data.products);
     })
       .catch((e) => {
         console.error(e);
@@ -28,11 +30,11 @@ const ProductCatalog = () => {
 
   return (
     <div className={styles.productCatalog}>
-      {products.length ? (
+      {isProductsList.length ? (
         <>
           <ProductList
-            productsInBasket={productsInBasket}
-            products={products}
+            onCheckProductInBasket={onCheckProductInBasket}
+            products={isProductsList}
           ></ProductList>
           <LoadMoreProducts />
         </>
