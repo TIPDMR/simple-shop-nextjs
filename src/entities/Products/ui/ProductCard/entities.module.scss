@@ -27,6 +27,8 @@
   @include index.mix-flex-container(column, space-between);
   row-gap: 10px;
   max-width: 303px;
+  max-height: 710px;
+
   background: index.$var-colorGrayLight;
   padding: 10px;
   border-radius: 15px;
@@ -46,7 +48,7 @@
   &__price {
     @include index.mix-typography-regular();
     align-self: center;
-    margin: 20px 0;
+    margin: 10px 0;
   }
 
   &__title {
@@ -75,8 +77,8 @@
   }
 
   &__description {
-    @include index.mix-typography-text-number-rows-show(10);
-    height: 200px;
+    @include index.mix-typography-text-number-rows-show(6);
+
 
     &::after {
       @extend %animation-full-text;
