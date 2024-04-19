@@ -2,11 +2,12 @@
 import React from 'react';
 import { Heading } from '@ui/Heading';
 import { OrderForm } from '@widgets/OrderForm';
+import { RemoveFromBasketButton } from '@features/basket';
 import { BasketProduct, BasketProductList, type IBasketProduct, useBasket } from '@entities/Basket';
 
 
 import styles from './widgets.module.scss';
-import { RemoveProductFromBasket } from '@features/basket/buttons';
+
 
 /**
  * Корзина
@@ -23,7 +24,7 @@ const Basket = () => {
           <BasketProduct
             key={basketProduct.id}
             product={basketProduct}
-            removeButton={<RemoveProductFromBasket product={basketProduct} />}
+            removeButton={<RemoveFromBasketButton product={basketProduct} />}
           />
         ))}
       </BasketProductList>

@@ -14,7 +14,7 @@ interface IAddProductBasketProps {
  * @param product - Товар который добавляется в корзину
  * @constructor
  */
-const AddProductToBasketButton = ({ product }: IAddProductBasketProps) => {
+const AddToBasketButton = ({ product }: IAddProductBasketProps) => {
   const { onAddProductToBasket } = useBasket();
 
   return (
@@ -27,4 +27,4 @@ const AddProductToBasketButton = ({ product }: IAddProductBasketProps) => {
   );
 };
 
-export { AddProductToBasketButton };
+export { AddToBasketButton };

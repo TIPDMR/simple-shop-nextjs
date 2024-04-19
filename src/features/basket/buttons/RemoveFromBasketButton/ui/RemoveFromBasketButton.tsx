@@ -14,7 +14,7 @@ interface IRemoveProductToBasketProps {
  * @param product - Товар который удаляется из корзины
  * @constructor
  */
-const RemoveProductFromBasket = ({ product }: IRemoveProductToBasketProps) => {
+const RemoveFromBasketButton = ({ product }: IRemoveProductToBasketProps) => {
   const { onRemoveProductToBasket } = useBasket();
   return (
     <Button
@@ -30,4 +30,4 @@ const RemoveProductFromBasket = ({ product }: IRemoveProductToBasketProps) => {
   );
 };
 
-export { RemoveProductFromBasket };
+export { RemoveFromBasketButton };
