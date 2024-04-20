@@ -8,18 +8,6 @@ interface IOrderForm {
   phone: string;
 }
 
-const mockBasketItems: IBasketProductsMock = {
-  cart: [
-    {
-      id: 12,
-      quantity: 2,
-    },
-    {
-      id: 15,
-      quantity: 5,
-    },
-  ],
-};
 const useOrderForm = () => {
   const [isLoading, setIsLoading] = useState(false);
   const {
@@ -43,24 +31,24 @@ const useOrderForm = () => {
       return;
     }
 
-    const res = await BackendApi.setOrder({
-      phone: formatedPhone,
-      cart: mockBasketItems.cart,
-    });
-    if (res && res.status === 401) {
-      setError('phone', {
-        type: 'custom',
-        message: 'Пользователь не найден или пароль введен неверно',
-      });
-    } else if (res && (res.status === 200 || res.status === 201)) {
-      console.log('Заказ отправлен');
-      // router.push('/');
-    } else {
-      setError('phone', {
-        type: 'custom',
-        message: 'Ошибка сервера',
-      });
-    }
+    // const res = await BackendApi.setOrder({
+    //   phone: formatedPhone,
+    //   cart: mockBasketItems.cart,
+    // });
+    // if (res && res.status === 401) {
+    //   setError('phone', {
+    //     type: 'custom',
+    //     message: 'Пользователь не найден или пароль введен неверно',
+    //   });
+    // } else if (res && (res.status === 200 || res.status === 201)) {
+    //   console.log('Заказ отправлен');
+    //   // router.push('/');
+    // } else {
+    //   setError('phone', {
+    //     type: 'custom',
+    //     message: 'Ошибка сервера',
+    //   });
+    // }
     setIsLoading(false);
   };
 
