@@ -1,6 +1,9 @@
 import { create } from 'zustand';
 import type { IProduct, IProductsStore } from '@entities/Products';
 
+/**
+ * Хранилище со списком товаров и данными страницы
+ */
 export const useProductsStore = create<IProductsStore>()((set, get) => ({
   products: [],
   page: 1,
