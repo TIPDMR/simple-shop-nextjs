@@ -19,8 +19,8 @@
 
   &__price {
     @include index.mix-flex-container(null, end);
-    max-width: 10%;
-    width: 100%;
+    width: 20%;
+
     justify-content: end;
     @include index.mix-breakpoints-tablet-small {
       min-width: 15%;
@@ -29,10 +29,8 @@
 
   &__count {
     @include index.mix-flex-container(null, end);
-    width: 10%;
+    width: 15%;
 
-    @include index.mix-breakpoints-tablet-small {
-      width: 10%;
-    }
+
   }
 }
