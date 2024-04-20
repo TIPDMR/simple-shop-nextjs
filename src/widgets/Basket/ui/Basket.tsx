@@ -5,9 +5,7 @@ import { OrderForm } from '@widgets/OrderForm';
 import { RemoveFromBasketButton } from '@features/basket';
 import { BasketProduct, BasketProductList, type IBasketProduct, useBasket } from '@entities/Basket';
 
-
 import styles from './widgets.module.scss';
-
 
 /**
  * Корзина

@@ -1,0 +1,145 @@
+@mixin keyframe($animation_name) {
+  @-webkit-keyframes #{$animation_name} {
+    @content;
+  }
+
+  @-moz-keyframes #{$animation_name} {
+    @content;
+  }
+
+  @-o-keyframes #{$animation_name} {
+    @content;
+  }
+
+  @keyframes #{$animation_name} {
+    @content;
+  }
+}
+
+@mixin animation($delay, $duration, $animation, $direction: forward, $fillmode: fowards) {
+  -webkit-animation-delay: $delay;
+  -webkit-animation-duration: $duration;
+  -webkit-animation-name: $animation;
+  -webkit-animation-fill-mode: $fillmode;
+  -webkit-animation-direction: $direction;
+
+  -moz-animation-delay: $delay;
+  -moz-animation-duration: $duration;
+  -moz-animation-name: $animation;
+  -moz-animation-fill-mode: $fillmode;
+  -moz-animation-direction: $direction;
+
+  animation-delay: $delay;
+  animation-duration: $duration;
+  animation-name: $animation;
+  animation-fill-mode: $fillmode;
+  animation-direction: $direction;
+}
+
+// -- Slide Animations -- //
+
+// Slide Out Top from Center
+@include keyframe(animation-slide-out-up) {
+  0% {
+    transform: translate(0, 0);
+  }
+
+  100% {
+    transform: translate(0, -100%);
+  }
+}
+
+@include keyframe(animation-slide-out-down) {
+  0% {
+    transform: translate(0, 0);
+  }
+
+  100% {
+    transform: translate(0, 100%);
+  }
+}
+
+// Slide Out Left from Center
+@include keyframe(animation-slide-out-left) {
+  0% {
+    transform: translate(0, 0);
+  }
+
+  100% {
+    transform: translate(-100%, 0);
+  }
+}
+
+// Slide out Right from Center
+@include keyframe(animation-slide-out-right) {
+  0% {
+    transform: translate(0, 0);
+  }
+
+  100% {
+    transform: translate(100%, 0);
+  }
+}
+
+@include keyframe(animation-slide-in-up) {
+  0% {
+    transform: translate(0, 100%);
+  }
+
+  100% {
+    transform: translate(0, 0);
+  }
+}
+
+@include keyframe(animation-slide-in-down) {
+  0% {
+    transform: translate(0, -100%);
+  }
+
+  100% {
+    transform: translate(0, 0);
+  }
+}
+
+// Slide in Left to Center
+@include keyframe(animation-slide-in-left) {
+  0% {
+    transform: translate(-100%, 0);
+  }
+
+  100% {
+    transform: translate(0, 0);
+  }
+}
+
+// Slide in Right to Center
+@include keyframe(animation-slide-in-right) {
+  0% {
+    transform: translate(100%, 0);
+  }
+
+  100% {
+    transform: translate(0, 0);
+  }
+}
+
+// Slide fade in
+@include keyframe(animation-slide-fade-in) {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+// Slide fade out
+@include keyframe(animation-slide-fade-out) {
+  0% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}

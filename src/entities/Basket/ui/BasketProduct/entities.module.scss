@@ -3,6 +3,8 @@
 .basketProduct {
   @include index.mix-flex-container(null, space-around, center);
   column-gap: 15px;
+  @include index.mix-animation-animation(0, 0.5s, animation-slide-fade-in, ease);
+
   @include index.mix-breakpoints-tablet-small {
     column-gap: 5px;
   }
@@ -30,7 +32,6 @@
   &__count {
     @include index.mix-flex-container(null, end);
     width: 15%;
-
-
   }
 }
+

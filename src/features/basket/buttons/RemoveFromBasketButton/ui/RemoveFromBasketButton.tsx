@@ -7,20 +7,28 @@ import styles from './features.module.scss';
 
 interface IRemoveProductToBasketProps {
   product: IBasketProduct;
+  onClick?: () => void;
 }
 
 /**
  * Кнопка удаление товара из корзины
  * @param product - Товар который удаляется из корзины
+ * @param onClick
  * @constructor
  */
-const RemoveFromBasketButton = ({ product }: IRemoveProductToBasketProps) => {
+const RemoveFromBasketButton = ({ product, onClick }: IRemoveProductToBasketProps) => {
+  const handleClick = (id: number) => {
+    if (typeof onClick === 'function') {
+      onClick();
+    }
+    onRemoveProductToBasket(id);
+  };
   const { onRemoveProductToBasket } = useBasket();
   return (
     <Button
       size={'auto'}
       bgColor={'transparent'}
-      onClick={() => onRemoveProductToBasket(product.id)}
+      onClick={() => handleClick(product.id)}
       classNameButton={styles.deleteProductBasketButton}
     >
       <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className={styles.deleteProductBasketButton__image}>
