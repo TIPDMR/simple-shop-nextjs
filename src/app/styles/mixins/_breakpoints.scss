@@ -17,11 +17,15 @@
 }
 
 @mixin mobile {
-  @media only screen and (max-width: 576px) {
+  @media only screen and (max-width: 653px) {
     @content;
   }
 }
-
+@mixin mobile-small {
+  @media only screen and (max-width: 468px) {
+    @content;
+  }
+}
 @mixin mobile-hide {
   @include mobile {
     display: none;

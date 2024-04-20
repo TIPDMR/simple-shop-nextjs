@@ -4,11 +4,12 @@ import { IProduct, ProductCard } from '@entities/Products';
 import { AddToBasketButton, BasketQuantityButton } from '@features/products';
 
 import styles from './entities.module.scss';
+import { IBasketProduct } from '@entities/Basket';
 
 interface IProductListProps {
   children?: React.ReactNode;
   products: IProduct[];
-  onCheckProductInBasket: (product: IProduct) => boolean;
+  onCheckProductInBasket: (product: IProduct) => IBasketProduct | false;
 }
 
 /**
@@ -21,15 +22,19 @@ const ProductList = ({ products, onCheckProductInBasket }: IProductListProps) =>
 
   return (
     <div className={styles.productList}>
-      {products?.map((product: IProduct, index) => (
-        <ProductCard key={index} product={product}>
-          {!onCheckProductInBasket(product) ? (
-            <AddToBasketButton product={product} />
-          ) : (
-            <BasketQuantityButton></BasketQuantityButton>
-          )}
-        </ProductCard>
-      ))}
+      {
+        products?.map((product: IProduct, index) => {
+          const isInBasket = onCheckProductInBasket(product);
+          return (
+            <ProductCard key={index} product={product}>
+              {!isInBasket ? (
+                <AddToBasketButton product={product} />
+              ) : (
+                <BasketQuantityButton basketProductQuantity={isInBasket.quantity} basketProductId={isInBasket.id}></BasketQuantityButton>
+              )}
+            </ProductCard>
+          );
+        })}
     </div>
   );
 };

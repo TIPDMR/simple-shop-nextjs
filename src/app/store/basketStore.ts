@@ -10,13 +10,27 @@ export const useBasketStore = create<IBasketStore>()(
       loading: false,
       error: null,
       addProductToBasket: (product: IBasketProduct) => {
-        const currentProducts = get().products;
-        set({ products: [...currentProducts, product] });
+        const currentProductList = get().products;
+        set({ products: [...currentProductList, product] });
       },
-      removeProductFromBasket: (product: IBasketProduct) => {
-        const currentProducts = get().products;
-        const filterProduct = currentProducts.filter((getProduct: IBasketProduct) => getProduct.id !== product.id);
+      removeProductFromBasket: (productId: number) => {
+        const currentProductList = get().products;
+        const filterProduct = currentProductList.filter((getProduct: IBasketProduct) => getProduct.id !== productId);
         set({ products: [...filterProduct] });
+      },
+      changeQuantity: (productIds: number, quantity: number) => {
+        const currentProductList = get().products;
+        const newProductList = currentProductList.map((product) => {
+          if (product.id === productIds) {
+            return {
+              ...product,
+              quantity,
+            };
+          }
+          return product;
+        });
+
+        set({ products: [...newProductList] });
       },
     }),
     {

@@ -18,12 +18,22 @@ interface IBasketProductProps {
  * @constructor
  */
 const MemoizedBasketProduct = ({ product: { id, name, quantity, price }, removeButton }: IBasketProductProps) => {
+  /**
+   * Форматируем цену из 10000 в 10 000, добавляем разделители разрядов
+   *
+   * @param price - цена
+   * @returns {string}
+   */
+  function priceFormat(price: number) {
+    return new Intl.NumberFormat('ru-RU').format(price);
+  }
+
   return (
     <div className={styles.basketProduct}>
       {removeButton && removeButton}
       <span className={styles.basketProduct__name}>{name}</span>
-      <span className={styles.basketProduct__count}>{quantity}</span>
-      <span className={styles.basketProduct__price}>{price}</span>
+      <span className={styles.basketProduct__count}>{quantity} шт.</span>
+      <span className={styles.basketProduct__price}>{priceFormat(parseFloat(price) * quantity)}&#8381;</span>
     </div>
   );
 };

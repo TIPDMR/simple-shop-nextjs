@@ -1,8 +1,8 @@
 export interface IBasketProduct {
   id: number;
   quantity: number;
-  name?: string;
-  price?: string;
+  name: string;
+  price: string;
 }
 
 export interface IBasket {
@@ -19,5 +19,6 @@ export interface IBasketStore {
   loading: boolean;
   error: string | null;
   addProductToBasket: (products: IBasketProduct) => void;
-  removeProductFromBasket: (products: IBasketProduct) => void;
+  removeProductFromBasket: (productId: number) => void;
+  changeQuantity: (id: number, quantity: number) => void;
 }

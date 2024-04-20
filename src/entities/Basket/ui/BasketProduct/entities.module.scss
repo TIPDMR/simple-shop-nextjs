@@ -29,7 +29,7 @@
 
   &__count {
     @include index.mix-flex-container(null, end);
-    width: 5%;
+    width: 10%;
 
     @include index.mix-breakpoints-tablet-small {
       width: 10%;

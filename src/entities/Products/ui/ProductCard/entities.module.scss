@@ -36,7 +36,7 @@
   word-break: break-word;
   overflow-wrap: anywhere;
   position: relative;
-  @media only screen and (max-width: 667px) {
+  @include index.mix-breakpoints-mobile {
     max-width: 100%;
     width: 100%;
   }

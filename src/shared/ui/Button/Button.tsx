@@ -9,7 +9,7 @@ interface IAppButtonProps {
   type?: 'button' | 'reset' | 'submit';
   onClick?: () => void;
   classNameButton?: string;
-  size?: 'auto' | 'xs' | 's';
+  size?: 'auto' | 'xss' | 'xs' | 's';
   borderRadius?: 'xs';
   bgColor?: 'dark' | 'light' | 'transparent';
   textColor?: 'dark' | 'light';
@@ -53,6 +53,7 @@ const Button: React.FC<IAppButtonProps> = (
   const sizeList = {
     auto: styles.button_size_auto,
     xs: styles.button_size_xs,
+    xss: styles.button_size_xss,
     s: styles.button_size_s,
   };
 

@@ -15,19 +15,21 @@ import styles from './widgets.module.scss';
  */
 const Basket = () => {
   const { isProductBasketList } = useBasket();
-  if (!isProductBasketList.length) return null;
+
   return (
     <div className={styles.basket}>
       <Heading tag={'h2'}>Добавленные товары</Heading>
-      <BasketProductList>
-        {isProductBasketList.map((basketProduct: IBasketProduct) => (
-          <BasketProduct
-            key={basketProduct.id}
-            product={basketProduct}
-            removeButton={<RemoveFromBasketButton product={basketProduct} />}
-          />
-        ))}
-      </BasketProductList>
+      {(!isProductBasketList.length) ? (<span>Нет товаров в корзине</span>) : (
+        <BasketProductList>
+          {isProductBasketList.map((basketProduct: IBasketProduct) => (
+            <BasketProduct
+              key={basketProduct.id}
+              product={basketProduct}
+              removeButton={<RemoveFromBasketButton product={basketProduct} />}
+            />
+          ))}
+        </BasketProductList>
+      )}
       <OrderForm />
     </div>
   );

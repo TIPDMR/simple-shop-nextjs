@@ -3,4 +3,10 @@
 .productList {
   @include index.mix-flex-container(row, center, null, null, wrap);
   gap: 30px;
+  @include index.mix-breakpoints-tablet-small {
+    gap: 15px
+  }
+  @include index.mix-breakpoints-mobile {
+    gap: 10px
+  }
 }

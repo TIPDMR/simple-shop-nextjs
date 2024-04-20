@@ -1,0 +1,1 @@
+export { InputProductQuantity } from './InputProductQuantity';

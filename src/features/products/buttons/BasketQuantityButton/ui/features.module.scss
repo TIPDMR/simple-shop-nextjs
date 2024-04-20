@@ -1,0 +1,12 @@
+@use '../../../../../app/styles/index';
+
+.basketQuantityButton {
+  @include index.mix-flex-container(row, space-between);
+  gap: 10px;
+
+  &__icons {
+    width: 24px;
+    height: 24px;
+  }
+
+}

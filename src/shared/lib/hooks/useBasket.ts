@@ -8,10 +8,11 @@ import { IBasketProduct } from '@entities/Basket';
 export const useBasket = () => {
   const addProductToBasket = useBasketStore((state) => state.addProductToBasket);
   const removeProductToBasket = useBasketStore((state) => state.removeProductFromBasket);
-  const productBasket = useBasketStore((state) => state.products);
+  const productBasketList = useBasketStore((state) => state.products);
+  const changeQuantityProduct = useBasketStore((state) => state.changeQuantity);
 
   /**
-   * Добавление товара в хранилище Zustand
+   * Добавление товара в корзину
    * @param product
    */
   const handleAddProduct = (product: IProduct) => {
@@ -24,27 +25,35 @@ export const useBasket = () => {
   };
 
   /**
-   * Удаление товара из хранилища Zustand
-   * @param product
+   * Удаление товара из корзины
+   * @param productId - id товара
    */
-  const handleRemoveProduct = (product: IBasketProduct) => {
-    removeProductToBasket(product);
+  const handleRemoveProduct = (productId: number) => {
+    removeProductToBasket(productId);
   };
+
   /**
    * Проверка находится ли товар в корзине
-   * @param product
+   * @param product - товар который ищем в корзине
    */
-  const checkProductInBasket = (product: IProduct) => {
-    return (
-      productBasket.some(
-        (productInBasket) => productInBasket.id === product.id,
-      ) || false
-    );
+  const checkProductInBasket = (product: IProduct): IBasketProduct | false => {
+    return productBasketList.find((productInBasket) => productInBasket.id === product.id) || false;
   };
+
+  /**
+   * Изменение количества товара в корзине
+   * @param productId  - id товара
+   * @param productQuantity - количество товара
+   */
+  const changeQuantity = (productId: number, productQuantity: number) => {
+    changeQuantityProduct(productId, productQuantity);
+  };
+
   return {
     onAddProductToBasket: handleAddProduct,
     onRemoveProductToBasket: handleRemoveProduct,
-    isProductBasketList: productBasket,
+    isProductBasketList: productBasketList,
     onCheckProductInBasket: checkProductInBasket,
+    onChangeProductQuantity: changeQuantity,
   };
 };
