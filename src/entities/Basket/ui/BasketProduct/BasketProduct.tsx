@@ -33,14 +33,18 @@ const MemoizedBasketProduct = ({ product, removeButton, className }: IBasketProd
     return new Intl.NumberFormat('ru-RU').format(price);
   }
 
+  /**
+   * Метод который после нажатия на удаление товара из корзины,
+   * сперва навешает анимацию, сделает задержку и удалит товар.
+   */
   const handleClick = async () => {
     setHidden(true);
     await new Promise((resolve) => setTimeout(resolve, .3 * 1000));
   };
+
   return (
     <div className={clsx(styles.basketProduct, className, hidden && styles.basketProduct__fadeOut)}>
       {removeButton(handleClick)}
-      {/*<RemoveFromBasketButton onClick={handleClick} product={product} />*/}
       <span className={styles.basketProduct__name}>{name}</span>
       <span className={styles.basketProduct__count}>{quantity} шт.</span>
       <span className={styles.basketProduct__price}>{priceFormat(parseFloat(price) * quantity)}&#8381;</span>
