@@ -5,6 +5,11 @@
   column-gap: 15px;
   @include index.mix-animation-animation(0, 0.5s, animation-slide-fade-in, ease);
 
+  &__fadeOut {
+    @include index.mix-animation-animation(0, 0.5s, animation-slide-fade-out, ease);
+    opacity: 0;
+  }
+
   @include index.mix-breakpoints-tablet-small {
     column-gap: 5px;
   }

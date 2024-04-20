@@ -23,7 +23,7 @@ const Basket = () => {
             <BasketProduct
               key={basketProduct.id}
               product={basketProduct}
-              removeButton={<RemoveFromBasketButton product={basketProduct} />}
+              removeButton={(onRemove) => (<RemoveFromBasketButton onClick={onRemove} product={basketProduct} />)}
             />
           ))}
         </BasketProductList>

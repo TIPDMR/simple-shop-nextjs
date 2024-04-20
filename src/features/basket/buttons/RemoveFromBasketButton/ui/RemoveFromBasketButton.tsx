@@ -17,9 +17,9 @@ interface IRemoveProductToBasketProps {
  * @constructor
  */
 const RemoveFromBasketButton = ({ product, onClick }: IRemoveProductToBasketProps) => {
-  const handleClick = (id: number) => {
+  const handleClick = async (id: number) => {
     if (typeof onClick === 'function') {
-      onClick();
+      await onClick();
     }
     onRemoveProductToBasket(id);
   };
